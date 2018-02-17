@@ -1,0 +1,7 @@
+yank-0v01.html
+
+https://www.linkedin.com/sales/search?profileViewType=NOT_VIEWED&facet=G&facet=N&facet=CS&facet.G=ca%3A0&facet.N=O&facet.CS=B&titleScope=CURRENT&jobTitleEntities=Founder_35&jobTitleEntities=Owner_1&jobTitleEntities=Co-Founder_103&count=300&start=0&pivotId=199984086&updateHistory=true&trackingInfoJson.contextId=C1203A3CEDC0111500BA3033432B0000
+
+yank-0v02.html
+
+https://www.linkedin.com/sales/search?profileViewType=NOT_VIEWED&facet=G&facet=N&facet=CS&facet.G=ca%3A0&facet.N=O&facet.CS=B&titleScope=CURRENT&jobTitleEntities=Founder_35&jobTitleEntities=Owner_1&jobTitleEntities=Co-Founder_103&count=25&start=0&updateHistory=true&searchHistoryId=2074689316&trackingInfoJson.contextId=BECCF6695CC21115C0951709442B0000
