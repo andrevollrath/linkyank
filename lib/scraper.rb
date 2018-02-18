@@ -20,11 +20,13 @@ module Scraper
 
 
     def index_yank    
-      url = "#{Rails.root}/public/yank-0v01.html"
+      url = "#{Rails.root}/public/yank-488v00.html"
       html = Nokogiri::HTML(open(url))
       e = html.search("code")[1]
 
       JSON.parse(e.to_s.match(/(?<=<!--)(.*)(?=-->)/)[0])["searchResults"]
+    
+      #i.each{|e| k << e['company']['companyId'] if e['company'].key?('companyId')}
     end
 
     def company_yank
