@@ -1,13 +1,13 @@
 #home
-  .ribbon
-    .icon_top
-      %i.large.inverted.linkedin.icon
-
   .ribbon.white.two.zero.pad
     .ui.container
       #image_header
         =image_tag 'man-thief.svg'
   .ribbon.red.three.pad
     .ui.center.aligned.container
-      %h1 Linkedin Yanker
-      %p Just a check for formatting
+      %h1 Yanking off Links
+      %p= "Oh manual fun :< --$$-- only #{@m.count} 2 go!" 
+  .ribbon.two.pad
+    .links
+      -@m.each_with_index do |m,i|
+        %a{:href => "https://www.linkedin.com/company/#{m.cid}"}= "#{m.cid} => #{m.company} =>(#{i+1})"

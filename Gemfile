@@ -40,6 +40,8 @@ gem 'figaro'
 gem 'mechanize'
 gem 'nokogiri'
 gem 'seed_dump'
+# For checking emails =>
+gem "neverbounce-api"
 
 # Postgres for Heroku
 group :production do
