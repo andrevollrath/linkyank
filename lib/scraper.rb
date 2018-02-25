@@ -40,6 +40,7 @@
 
 module Scraper
   module Console
+
     def hello
       puts "hello"
     end
@@ -49,15 +50,32 @@ module Scraper
       puts "Reloading =>..." 
     end
 
-    def member_yank    
-      url = "#{Rails.root}/public/yank-488v00.html"
+    def member_yank(url = nil)      
+      @count = 0
+      @comp = 0
+      files = Dir.glob("#{Rails.root}/public/0c/**/*")
+      files.each do |f|
+        puts "File --> #{f}"
+        k = member_record(f)
+        #File.rename(f, f.sub('/public/a', '/public/b')) if k
+      end
+      puts "Total count: #{@count} :: Attempted Writes #{@comp}"
+    end
+
+    def member_record(url = nil)
+       unless url
+        url = "#{Rails.root}/public/yank-488v00.html"
+      end
+
       html = Nokogiri::HTML(open(url))
       e = html.search("code")[1]
 
       a = JSON.parse(e.to_s.match(/(?<=<!--)(.*)(?=-->)/)[0])["searchResults"]
     
       a.each do |i|
+        @count += 1
         if i['company'].key?('companyId')
+          @comp += 1
           m = Member.new
           m.name = i['member']['formattedName']
           m.nid = i['member']['memberId']
@@ -67,8 +85,8 @@ module Scraper
           m.cid = i['company']['companyId']
           m.save
         end
-      end
-    end
+      end    
+    end 
   
     def company_yank
       files = Dir.glob("#{Rails.root}/public/a/**/*")
